@@ -140,6 +140,13 @@ app.delete("/book/:id", (req, res) => {
 })
 
 
+app.use("*", (req, res) => {
+    res.send(`<div>
+        <h1>404 not found</h1>
+        </div>`)
+})
+
+
 const PORT = process.env.PORT || 5000
 
 app.listen(PORT, () => {
